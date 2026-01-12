@@ -23,7 +23,7 @@ document.addEventListener("tinychat:ready", () => {
 
         // this will send a welcome message from the bot
         window.tinyChat.sendBotMessage({
-            // you can also apply some translation and use window.tinyChat.locale to retrieve the locale of the Tiny Chat widget (which depends on your dashboard settings and language of customer)
+            // you can also apply some translation and use window.tinyChat.locale to retrieve the locale of the Tiny Finch widget (which depends on your dashboard settings and language of customer)
             text: `Hello ${user.firstName}, how can we help you today?`,
             // ID is necessary to prevent duplication of messages
             id: "welcome",

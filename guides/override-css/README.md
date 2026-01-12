@@ -1,14 +1,14 @@
-### Customizing Tiny Chat Widget Styles
+### Customizing Tiny Finch Widget Styles
 
-In some cases, the appearance settings on the Tiny Chat dashboard may not fully align with your brand’s unique identity. To enable more precise customization, you can apply custom CSS by overriding Tiny Chat’s styling.
+In some cases, the appearance settings on the Tiny Finch dashboard may not fully align with your brand’s unique identity. To enable more precise customization, you can apply custom CSS by overriding Tiny Finch’s styling.
 
-### How Tiny Chat Manages Styles
+### How Tiny Finch Manages Styles
 
-The Tiny Chat widget is encapsulated within a shadow DOM to prevent your page's CSS from affecting its styling. To customize Tiny Chat, you can add a `<template>` tag with your CSS rules, which Tiny Chat will read and apply within the shadow DOM.
+The Tiny Finch widget is encapsulated within a shadow DOM to prevent your page's CSS from affecting its styling. To customize Tiny Finch, you can add a `<template>` tag with your CSS rules, which Tiny Finch will read and apply within the shadow DOM.
 
-### Example: Overriding Tiny Chat CSS Variables
+### Example: Overriding Tiny Finch CSS Variables
 
-Here is a basic example to modify Tiny Chat’s CSS variables, enabling you to adjust colors, fonts, and images.
+Here is a basic example to modify Tiny Finch’s CSS variables, enabling you to adjust colors, fonts, and images.
 
 ```html
 <template id="css-for-tiny-chat">
@@ -24,11 +24,11 @@ Here is a basic example to modify Tiny Chat’s CSS variables, enabling you to a
 
 > **Note:** Be sure to include `!important` after each rule to ensure your custom styles override the defaults.
 
-The `<template>` tag must have the ID `css-for-tiny-chat`. You can place this `<template>` tag in your header, ideally right before the Tiny Chat import script line.
+The `<template>` tag must have the ID `css-for-tiny-chat`. You can place this `<template>` tag in your header, ideally right before the Tiny Finch import script line.
 
 #### Tip: Access CSS Variables
 
-To view the complete list of available CSS variables, inspect the Tiny Chat widget in your browser. Most variables are located in `#tc-container`.
+To view the complete list of available CSS variables, inspect the Tiny Finch widget in your browser. Most variables are located in `#tc-container`.
 
 ### Example: Customizing the Chat Button Shape
 
@@ -52,7 +52,7 @@ You can also override specific styles to modify the widget’s appearance, such 
 
 ### Setting a Custom Bubble Image
 
-To apply a custom bubble image, make sure you’ve uploaded one in the Tiny Chat dashboard. If no image is set, the default icon will display even if you include an override in your CSS.
+To apply a custom bubble image, make sure you’ve uploaded one in the Tiny Finch dashboard. If no image is set, the default icon will display even if you include an override in your CSS.
 
 ### What if I cannot use templates?
 

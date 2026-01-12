@@ -6,7 +6,7 @@ async function trigger() {
 
     // this will send a custom message from the bot
     await window.tinyChat.sendBotMessage({
-        // you can also apply some translation and use window.tinyChat.locale to retrieve the locale of the Tiny Chat widget (which depends on your dashboard settings and language of customer)
+        // you can also apply some translation and use window.tinyChat.locale to retrieve the locale of the Tiny Finch widget (which depends on your dashboard settings and language of customer)
         text: `Hello, do you know that we offer free shipping if you buy a new pair of ${PRODUCT_NAME}?`,
         id: "trigger-message",
     });

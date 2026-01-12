@@ -44,14 +44,14 @@ class SlackController < ApplicationController
   def backup_files(request_data)
     event = request_data["event"]
     event_type = request_data["type"]
-    # if the event is a new thread message written by Tiny Chat bot and it contains a Tiny Chat file link
-    if event_type == "message" && event["thread_ts"] && event["bot_id"] && event["text"].include?("https://files.tiny-chat.com")
+    # if the event is a new thread message written by Tiny Finch bot and it contains a Tiny Finch file link
+    if event_type == "message" && event["thread_ts"] && event["bot_id"] && event["text"].include?("https://files.tinyfinch.chat")
       # retrieve the link from the text
-      pattern = /https:\/\/files\.tiny-chat\.com\S+\|/
+      pattern = /https:\/\/files\.tinyfinch\.chat\S+\|/
       match = event["text"].match(pattern)
       if match
         file_link = match[0]
-        puts "Found a Tiny Chat file link: #{file_link}"
+        puts "Found a Tiny Finch file link: #{file_link}"
         file_content = download_file(file_link)
         if file_content
           new_file_link = nil

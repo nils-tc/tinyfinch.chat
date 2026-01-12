@@ -1,14 +1,14 @@
 # JavaScript API
 
-Tiny Chat has a small but efficient JavaScript API accessible via `window.tinyChat`.
+Tiny Finch has a small but efficient JavaScript API accessible via `window.tinyChat`.
 
 ## Events
 
-Tiny Chat sends custom events that you can listen to. All event names are prefixed with `tinychat:`. You can access to the data of the event with `event.detail`.
+Tiny Finch sends custom events that you can listen to. All event names are prefixed with `tinychat:`. You can access to the data of the event with `event.detail`.
 
 | Event name                         | Detail data                                                                                  | Description                                             |
 | ---------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `tinychat:ready`                   | none                                                                                         | Tiny Chat widget has finished its initialization phase. |
+| `tinychat:ready`                   | none                                                                                         | Tiny Finch widget has finished its initialization phase. |
 | `tinychat:widget-open`             | none                                                                                         | The widget has been opened.                             |
 | `tinychat:widget-close`            | none                                                                                         | The widget has been closed.                             |
 | `tinychat:email-validated`         | `email`: string                                                                              | The user has entered a valid email.                     |
@@ -26,7 +26,7 @@ Using the API, you can create your own interactions with custom HTML.
 
 -   `window.tinyChat.setIsOpen(isOpen: boolean)`: Opens or closes the widget.
 
--   `window.tinyChat.setSlackChannelID(channelID: str)`: Routes the user's message to a different channel ID. Tiny Chat bot must be added to the channel beforehand. The user's message should not have been sent to Slack yet.
+-   `window.tinyChat.setSlackChannelID(channelID: str)`: Routes the user's message to a different channel ID. Tiny Finch bot must be added to the channel beforehand. The user's message should not have been sent to Slack yet.
 
 -   `window.tinyChat.sendBotMessage({text: str, id: str, picture?: str, name?: str})`: Sends a new message from the bot. It should have a unique ID to prevent sending it twice.
 

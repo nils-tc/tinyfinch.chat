@@ -16,14 +16,14 @@ class SlackController extends Controller
         $event = $request->input('event', []);
         $eventType = $request->input('type');
 
-        // if the event is a new thread message written by Tiny Chat bot and it contains a Tiny Chat file link
-        if ($eventType == 'message' && isset($event['thread_ts']) && isset($event['bot_id']) && strpos($event['text'], 'https://files.tiny-chat.com') !== false) {
+        // if the event is a new thread message written by Tiny Finch bot and it contains a Tiny Finch file link
+        if ($eventType == 'message' && isset($event['thread_ts']) && isset($event['bot_id']) && strpos($event['text'], 'https://files.tinyfinch.chat') !== false) {
             // retrieve the link from the text
-            $pattern = '/https:\/\/files\.tiny-chat\.com\S+\|/';
+            $pattern = '/https:\/\/files\.tinyfinch\.chat\S+\|/';
             preg_match($pattern, $event['text'], $matches);
             if ($matches) {
                 $fileLink = $matches[0];
-                echo "Found a Tiny Chat file link: $fileLink\n";
+                echo "Found a Tiny Finch file link: $fileLink\n";
                 $fileContent = $this->downloadFile($fileLink);
                 if ($fileContent) {
                     $newFileLink = null;

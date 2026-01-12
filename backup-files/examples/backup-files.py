@@ -44,19 +44,19 @@ def _rewrite_message(event, new_text):
 def backup_files(request_data):
     event = request_data.get("event", {})
     event_type = request_data.get("type")
-    # if the event is a new thread message written by Tiny Chat bot and it contains a Tiny Chat file link
+    # if the event is a new thread message written by Tiny Finch bot and it contains a Tiny Finch file link
     if (
         event_type == "message"
         and event.get("thread_ts")
         and event.get("bot_id")
-        and "https://files.tiny-chat.com" in event.get("text")
+        and "https://files.tinyfinch.chat" in event.get("text")
     ):
         # retrieve the link from the text
-        pattern = r"https://files\.tiny-chat\.com\S+\|"
+        pattern = r"https://files\.tinyfinch\.chat\S+\|"
         match = re.search(pattern, event["text"])
         if match:
             file_link = match.group()
-            print("Found a Tiny Chat file link:", file_link)
+            print("Found a Tiny Finch file link:", file_link)
             file_content = _download_file(file_link)
             if file_content:
                 new_file_link = None

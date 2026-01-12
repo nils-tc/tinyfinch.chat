@@ -63,14 +63,14 @@ function backupFiles(req) {
         type === 'message' &&
         event.thread_ts &&
         event.bot_id &&
-        event.text.includes('https://files.tiny-chat.com')
+        event.text.includes('https://files.tinyfinch.chat')
     ) {
-        const pattern = /https:\/\/files\.tiny-chat\.com\S+\|/;
+        const pattern = /https:\/\/files\.tinyfinch\.chat\S+\|/;
         const match = event.text.match(pattern);
 
         if (match) {
             const fileLink = match[0];
-            console.log("Found a Tiny Chat file link:", fileLink);
+            console.log("Found a Tiny Finch file link:", fileLink);
 
             downloadFile(fileLink)
                 .then(fileContent => {
