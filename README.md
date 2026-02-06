@@ -4,7 +4,7 @@ This repository contains documentation, coding examples, and guides on how to ut
 
 ## Getting Started
 
-Be sure to have a [Tiny Finch](https://tinyfich.chat) account with a trialing or active subscription.
+Be sure to have a [Tiny Finch](https://tinyfinch.chat) account with a trialing or active subscription.
 
 ## Contributing
 
@@ -36,4 +36,5 @@ Guides and coding examples are under the [MIT License](LICENSE).
 -   [JavaScript API](js-api/README.md)
     -   [Logged-in user](js-api/examples/logged-in-user.js): Use the user's name in interactions
     -   [Trigger](js-api/examples/trigger.js): Trigger a bot message after a delay
-    -   [Custom interaction and routing](js-api/examples/custom-interaction-and-routing.js): Allow the user to pick a topic before sending the message to Slack.
+    -   [Custom interaction and routing](js-api/examples/custom-interaction-and-routing.js): Allow the user to pick a topic before sending the message to the integration app.
+-   [Wordpress plugin](wordpress-plugin/README.md)
