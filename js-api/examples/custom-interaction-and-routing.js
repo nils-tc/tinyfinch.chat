@@ -1,8 +1,8 @@
-// fill here your choices and Slack channels IDs.
+// fill here your choices and integration app channels IDs.
 const CHOICES = [
     { name: "Finance", channel: "XXXX" },
     { name: "Marketing", channel: "YYYY" },
-    { name: "Other", channel: "" }, // leave default Slack channel
+    { name: "Other", channel: "" }, // leave default integration app channel
 ];
 
 // triggered after user has made a choice
@@ -10,7 +10,7 @@ const onUserChoice = (button) => {
     window.tinyChat.setSendButtonEnabled(true);
     const channel = button.dataset.channel;
     if (channel) {
-        window.tinyChat.setSlackChannelID(channel);
+        window.tinyChat.setIntegrationChannelID(channel);
     }
     window.tinyChat.sendBotMessage({
         text: "How can we help on this topic? Write your message to us.",
@@ -44,7 +44,7 @@ const choicesHTML = `
     </div>
 `;
 
-// Message to send to the Slack thread
+// Message to send to the integration app thread
 const choicesNames = CHOICES.map((choice) => choice.name);
 const message = `Hello ! Which topic do you want to talk about? Options : ${choicesNames}`;
 

@@ -16,9 +16,9 @@ Tiny Finch sends custom events that you can listen to. All event names are prefi
 
 ## Interactions
 
-Interactions are HTML sections in the widget, such as bot messages, email forms, and Slack replies. They are stored in the database and have an ID and a timestamp. Some interactions have custom properties, like the operator's name for the `operator-connected` interaction.
+Interactions are HTML sections in the widget, such as bot messages, email forms, and integration app replies. They are stored in the database and have an ID and a timestamp. Some interactions have custom properties, like the operator's name for the `operator-connected` interaction.
 
-The `InteractionTemplateEnum` includes the following values: `message-bot` \| `message-slack` \| `message-user` \| `operator-connected` \| `email-input` \| `chat-locked` \| `custom`
+The `InteractionTemplateEnum` includes the following values: `message-bot` \| `message-integration` \| `message-user` \| `operator-connected` \| `email-input` \| `chat-locked` \| `custom`
 
 Using the API, you can create your own interactions with custom HTML.
 
@@ -26,11 +26,11 @@ Using the API, you can create your own interactions with custom HTML.
 
 -   `window.tinyChat.setIsOpen(isOpen: boolean)`: Opens or closes the widget.
 
--   `window.tinyChat.setSlackChannelID(channelID: str)`: Routes the user's message to a different channel ID. Tiny Finch bot must be added to the channel beforehand. The user's message should not have been sent to Slack yet.
+-   `window.tinyChat.setIntegrationChannelID(channelID: str)`: Routes the user's message to a different integration app channel ID. Tiny Finch bot must be added to the channel beforehand. The user's message should not have been sent to the integration app yet. This method was previously named `setSlackChannelID`, it is still available under this name for retro-compatibility.
 
 -   `window.tinyChat.sendBotMessage({text: str, id: str, picture?: str, name?: str})`: Sends a new message from the bot. It should have a unique ID to prevent sending it twice.
 
--   `window.tinyChat.sendCustomInteraction({html: str, id: str, text: str})`: Sends a new custom interaction with your own HTML as a string. The `text` attribute is sent to Slack. It should have a unique ID to prevent sending it twice.
+-   `window.tinyChat.sendCustomInteraction({html: str, id: str, text: str})`: Sends a new custom interaction with your own HTML as a string. The `text` attribute is sent to the integration app. It should have a unique ID to prevent sending it twice.
 
 -   `window.tinyChat.setTitle(text: str)`: Sets the title of the widget.
 
@@ -59,9 +59,9 @@ window.tinyChat.chatData = {
 
 Fields marked with `?` are optional.
 
-`title`: Sets a custom title for the Slack message for customer support.
+`title`: Sets a custom title for the integration app message for customer support.
 
-If `chatData` is filled, permalinks to past user messages will be appended to the Slack message.
+If `chatData` is filled, permalinks to past user messages will be appended to the integration app message.
 
 ## Other attributes
 
@@ -77,7 +77,7 @@ If `chatData` is filled, permalinks to past user messages will be appended to th
 
 -   [Logged-in user](./examples/logged-in-user.js): Use the user's name in interactions
 -   [Trigger](./examples/trigger.js): Trigger a bot message after a delay
--   [Custom interaction and routing](./examples/custom-interaction-and-routing.js): Allow the user to pick a topic before sending the message to Slack.
+-   [Custom interaction and routing](./examples/custom-interaction-and-routing.js): Allow the user to pick a topic before sending the message to the integration app.
 
 ## Testing
 
@@ -85,5 +85,5 @@ While testing your script, you may need to reset the widget state between tests.
 
 -   Use a private window, and close and reopen your website between each test.
 -   Clear the local storage in your developer console.
--   Add the ✅ emoji on Slack, which will add a button on the widget to reset it.
+-   Add the ✅ emoji on the integration app, which will add a button on the widget to reset it.
 -   Call `window._tc.clearChat()` .

@@ -11,7 +11,7 @@ document.addEventListener("tinychat:ready", () => {
         // this will disable automatic messages
         window.tinyChat.disableAutomaticFlow = true;
 
-        // this will give user information in the slack thread
+        // this will give user information in the integration app intro message
         window.tinyChat.chatData = {
             title: `New message from ${user.email}`,
             user_id: user.id,
